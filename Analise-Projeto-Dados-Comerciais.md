@@ -13,6 +13,7 @@ são disponibilizadas quatro tabelas, listadas a seguir:
 Segue abaixo a explicação de cada uma das tabelas de dados fornecidos.
 
 ###                         DICIONÁRIO DE DADOS
+________
 
 ### order_detail (detalhe do pedido)
 
@@ -50,7 +51,7 @@ Segue abaixo a explicação de cada uma das tabelas de dados fornecidos.
 
 1. id → número único do método de pagamento
 2. payment_method → método de pagamento utilizado
-
+______
 
 
 Vamos ressaltar que na tabela transacional (ou tabela Fato) "order_detail" temos variáveis chaves 
