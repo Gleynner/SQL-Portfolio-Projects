@@ -121,7 +121,7 @@ do maior para o menor valor total por categoria.
 
 O resultado da consulta nos mostra que a categoria Mobiles & Tablets foi a que gerou maior receita no ano de 2022, apresentando o maior total de transações.
 
-br>
+<br>
 
 ## QUESTÃO 3
 <br>
@@ -150,10 +150,44 @@ Neste exercício, para realizar uma análise comparativa do valor de transaçõe
 Pelo retultado, podemos observar que devido á diversos fatores, como avanço tecnológico e/ou pandemia, o setor de Mobiles & Tablets teve maior crescimento e, Books e Others, tiveram maior redução de vendas comparado com o ano anterior.
 
 
-br>
+<br>
 
 ## QUESTÃO 4
 <br>
+
+> Exiba os 5 métodos de pagamento mais populares usados ​​durante 2022 (com base no total de pedidos únicos). Use "is_valid = 1" para filtrar os dados da transação. Tabela de origem: "order_detail", "payment_detail".
+
+**RESPOSTA 4**
+
+Segue abaixo nossa consulta SQL para o exercício proposto:
+
+<br>
+<div align="center">
+       <img width="585" height="256" alt="Consulta_Q4" src="https://github.com/user-attachments/assets/d680d978-5102-4bb8-b437-5bd43c4f5985" /><p><em>Fig. 07: Consulta da questão 04.</em></p>
+</div>
+<br>
+
+Este código realiza uma análise agregada com o objetivo de identificar os cinco métodos de pagamento mais utilizados no ano de 2022, considerando apenas pedidos is_valid = 1. Inicialmente, a consulta seleciona o ano do pedido por meio da função YEAR(), o método de pagamento a partir da tabela payment_detail e conta o número único de pedidos. Em seguida, é executado um INNER JOIN entre a tabela "order_detail" e a tabela de detalhes de pagamentos, utilizando o identificador do pagamento como chave de relacionamento. O filtro aplicado na cláusula WHERE restringe os dados a registros com pagamnetos já realizados (is_valid = 1) e ao período de interesse (ano de 2022). A métrica principal é calculada utilizando a função de agregação COUNT(DISTINCT A.id), que contabiliza o número de pedidos únicos por método de pagamento. Posteriormente, os dados são agrupados pelo ano do pedido e pelo método de pagamento. Por fim, a cláusula ORDER BY organiza os resultados de forma decrescente pelo total de pedidos, enquanto o uso do TOP 5 limita a saída aos cinco métodos de pagamento com maior volume de pedidos no período analisado.
+
+<br>
+<div align="center">
+       <img width="258" height="121" alt="Resultado_Q4" src="https://github.com/user-attachments/assets/94e710d6-905e-4759-9c0f-d44182217817" /><p><em>Fig. 08: Resultado da questão 04.</em></p>
+</div>
+<br>
+
+
+<br>
+
+## QUESTÃO 5
+<br>
+
+
+
+
+
+
+
+
 
 
 
