@@ -79,24 +79,11 @@ Abaixo segue o trecho de código para solucionar o problema proposto.
 
 
 
-SELECT     
-    MONTH(order_date) AS Mes_ID,     
-    DATENAME(MONTH, order_date) AS Mes_nome,      
-    YEAR(order_date) AS Ano,      
-    SUM(after_discount) AS Valor_total_transacao      
-FROM order_detail      
-WHERE      
-    YEAR(order_date) = 2021 AND is_valid = 1      
-    YEAR(order_date),       
-    MONTH(order_date),       
-    DATENAME(MONTH, order_date)      
-ORDER BY        
-    Valor_total_transacao DESC       
-
+<br>
 <div align="center">
        <img width="481" height="276" alt="Consulta_Q1" src="https://github.com/user-attachments/assets/2cecb1d3-aa03-47a8-b725-25668d776274" /><p><em>Fig. 01: Consulta da questão 01.</em></p>
 </div>
-
+<br>
 
 Nesta query, "MONTH()" foi utilizado para extrair o número do mês em cada data, "DATENAME(MONTH, 
 order_date)" para retornar o nome do mês por extenso, "YEAR()" extra o ano da data e "SUM(after_discount)" 
@@ -107,9 +94,11 @@ dados serão agrupados e, cada combinação  de "Ano", "Mes_ID" e "Mes_nome" for
 obrigatório porque toda coluna no "SELECT" que não é função de agregação (SUM, COUNT, etc) precisa 
 estar no "GROUP BY". Por fim, "ORDER BY" define a ordem do resultado final.
 
+<br>
 <div align="center">
        <img width="321" height="252" alt="Resultado_Q1" src="https://github.com/user-attachments/assets/da91f8dc-bbb6-4f52-8f90-33a4bac5eafe" /><p><em>Fig. 02: Resultado da questão 01.</em></p>
 </div>
+<br>
 
 O resultado da consulta acima nos mostra que o pico no valor total da transação foi atingida no mês 
 de agosto, sendo o maior valor para o ano de 2021.
