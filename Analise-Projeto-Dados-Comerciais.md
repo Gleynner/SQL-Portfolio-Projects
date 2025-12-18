@@ -1,4 +1,4 @@
-#  Projeto Análise de Dados Comerciais
+# Análise de Dados Comerciais
 
 
 Este projeto é composto por cinco perguntas que devem ser respondidas com base nos dados fornecidos. Para isso, são disponibilizadas quatro tabelas, listadas a seguir:
