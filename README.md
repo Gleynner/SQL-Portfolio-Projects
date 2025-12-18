@@ -185,7 +185,7 @@ Com o resultado do que foi proposto pelo exercício, observamos que os 5 tipos d
 <br>
 
 > Ordene estes 5 produtos com base em seus valores de transação.
-> 1. Samsung, 2. Apple, 3. Sony, 4. Huawei, 5. Lenovo
+> 1. Samsung, 2. Apple, 3. Sony, 4. Huawei e 5. Lenovo.           
 > Use is_valid = 1 para filtrar os dados da transação.
 
 **RESPOSTA 5**
