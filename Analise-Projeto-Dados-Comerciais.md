@@ -62,11 +62,15 @@ resposta estão dispostas a seguir:
 
 ### Vamos de fato ao que foi pedido ao analista de dados!!!
 
+<br>
+<br>
 
 ## QUESTÃO 01
+<br> 
 
 > Durante as transações ocorridas em 2021, em qual mês o valor total da transação (after_discount) atingiu
 > seu pico? Utilize "is_valid = 1" para filtrar os dados da transação. Tabela de origem: "order_detail".
+
 
 **RESPOSTA 1**
 
