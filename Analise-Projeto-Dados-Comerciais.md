@@ -77,6 +77,8 @@ de transaçoes realizada, considerando apenas as transações em que os clientes
 
 Abaixo segue o trecho de código para solucionar o problema proposto.
 
+
+
 SELECT
     MONTH(order_date) AS Mes_ID,
     DATENAME(MONTH, order_date) AS Mes_nome,
@@ -91,6 +93,7 @@ GROUP BY
     DATENAME(MONTH, order_date)
 ORDER BY 
     Valor_total_transacao DESC
+
 
 
 Nesta query, "MONTH()" foi utilizado para extrair o número do mês em cada data, "DATENAME(MONTH, 
