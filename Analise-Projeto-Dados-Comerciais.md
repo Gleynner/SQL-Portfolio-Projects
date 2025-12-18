@@ -94,7 +94,9 @@ O resultado da consulta acima nos mostra que o pico no valor total da transaçã
 <br>
 
 ## QUESTÃO 2
+
 <br>
+
 > Durante as transações realizadas no ano de 2022, qual categoria gerou o maior valor de transação? Utilize "is_valid = 1" para filtrar os dados de transação. Tabela de origem: "order_detail", "sku_detail"
 <br>
 
@@ -175,20 +177,47 @@ Este código realiza uma análise agregada com o objetivo de identificar os cinc
 </div>
 <br>
 
+Com o resultado do que foi proposto pelo exercício, observamos que os 5 tipos de pagamentos mais utilizados no ano de 2022 foram: cod, payaxis, customercredit, easypay e jazzwallet.
 
 <br>
 
 ## QUESTÃO 5
 <br>
 
+> Ordene estes 5 produtos com base em seus valores de transação.
+> 1. Samsung, 2. Apple, 3. Sony, 4. Huawei, 5. Lenovo
+> Use is_valid = 1 para filtrar os dados da transação.
+
+**RESPOSTA 5**
+
+Nesta atividade, teremos um desafio a mais pois não temos a coluna contendo as marcas dos produtos. Para alcançar o nosso objetivo, vamos criar uma coluna que armazenará as marcas desses itens pretendidos e então calcular o valor de transações relativo a cada uma delas.
+
+Segue abaixo nossa consulta SQL:
+
+<br>
+<div align="center">
+       <img width="615" height="509" alt="Consulta_Q5" src="https://github.com/user-attachments/assets/a678a766-6dbf-494d-bf95-9bbb1a222cc3" /><p><em>Fig. 09: Consulta da questão 05.</em></p>
+</div>
+<br>
+
+Este código utiliza CTE's para organizar uma análise agregada do valor total de transações por marca de produto. Inicialmente, a CTE denominada base realiza um INNER JOIN entre a tabela "order_detail" e a tabela "sku_detail", associando cada pedido ao respectivo produto por meio do identificador do SKU. Nessa etapa, é aplicada uma expressão condicional CASE WHEN, que classifica os produtos em marcas específicas com base em palavras-chave presentes no nome do SKU (sku_name), após a normalização do texto com a função LOWER(). Produtos que não se enquadram nas regras definidas são classificados como “Outros”. Ainda na CTE base, é aplicado um filtro para considerar apenas registros is_valid = 1, e o valor da transação após desconto (after_discount) é preservado para agregação posterior.
+
+Em seguida, a CTE "Tabela_final" consome os dados previamente preparados na CTE "base" para realizar a etapa de agregação. Nessa fase, os registros classificados como “Outros” são excluídos, e os valores de transação são somados por marca utilizando a função de agregação SUM(), resultando no valor total por marca de produto. Por fim, a consulta principal seleciona os resultados agregados e ordena as marcas de forma decrescente com base no valor total das transações, permitindo identificar aquelas com maior relevância financeira no conjunto de dados analisado
+
+
+<br>
+<div align="center">
+       <img width="225" height="120" alt="Resultado_Q5" src="https://github.com/user-attachments/assets/c82514a5-fdfc-41a4-88d9-6f54835c8c10" /><p><em>Fig. 10: Resultado da questão 05.</em></p>
+</div>
+<br>
+
+Com base nos resultados, a marca Samsung apresenta maior valor em transaçoes, seguida pela marca Apple. Na seqência temos a Sony em terceiro lugar, Huawei em quarto e Lenovo em quinto.
 
 
 
+## Conclusão
 
 
-
-
-
-
+O SQL é uma ferramenta essencial em projetos de Data Science por permitir o acesso, a organização e a análise de grandes volumes de dados de forma eficiente e estruturada. Por meio de consultas declarativas, é possível filtrar, transformar, agregar e relacionar dados diretamente no banco, reduzindo custos computacionais e garantindo maior desempenho. Funcionalidades como joins, agregações, expressões condicionais e CTEs facilitam a preparação dos dados e a criação de métricas analíticas confiáveis, tornando o SQL uma base sólida para análises exploratórias, construção de indicadores e integração com ferramentas como Python, R e soluções de visualização de dados.
 
 
