@@ -79,20 +79,20 @@ Abaixo segue o trecho de código para solucionar o problema proposto.
 
 
 
-SELECT
-    MONTH(order_date) AS Mes_ID,
-    DATENAME(MONTH, order_date) AS Mes_nome,
-    YEAR(order_date) AS Ano,
-    SUM(after_discount) AS Valor_total_transacao
-FROM order_detail
-WHERE
-    YEAR(order_date) = 2021 AND is_valid = 1
-GROUP BY 
-    YEAR(order_date), 
-    MONTH(order_date), 
-    DATENAME(MONTH, order_date)
-ORDER BY 
-    Valor_total_transacao DESC
+SELECT     
+    MONTH(order_date) AS Mes_ID,     
+    DATENAME(MONTH, order_date) AS Mes_nome,      
+    YEAR(order_date) AS Ano,      
+    SUM(after_discount) AS Valor_total_transacao      
+FROM order_detail      
+WHERE      
+    YEAR(order_date) = 2021 AND is_valid = 1      
+GROUP BY        
+    YEAR(order_date),       
+    MONTH(order_date),       
+    DATENAME(MONTH, order_date)      
+ORDER BY        
+    Valor_total_transacao DESC       
 
 
 
