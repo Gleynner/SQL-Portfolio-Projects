@@ -93,7 +93,8 @@ WHERE
 ORDER BY        
     Valor_total_transacao DESC       
 
-![Uploading Consulta_Q1.png…]("COnsulta da questão 01")
+
+<img width="410" height="261" alt="Consulta_Q1" src="https://github.com/user-attachments/assets/05f787f3-3f59-448a-bfbb-23eef80e5226" />
 
 
 
