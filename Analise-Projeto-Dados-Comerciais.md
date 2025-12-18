@@ -87,12 +87,13 @@ SELECT
 FROM order_detail      
 WHERE      
     YEAR(order_date) = 2021 AND is_valid = 1      
-GROUP BY        
     YEAR(order_date),       
     MONTH(order_date),       
     DATENAME(MONTH, order_date)      
 ORDER BY        
     Valor_total_transacao DESC       
+
+![Uploading Consulta_Q1.png…]("COnsulta da questão 01")
 
 
 
