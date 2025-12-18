@@ -12,8 +12,8 @@ são disponibilizadas quatro tabelas, listadas a seguir:
 
 Segue abaixo a explicação de cada uma das tabelas de dados fornecidos.
 
-##                          DICIONÁRIO DE DADOS
-__________________________________________________________________________
+###                         DICIONÁRIO DE DADOS
+
 ### order_detail (detalhe do pedido)
 
 1. id → número único do pedido / id_order
@@ -29,7 +29,7 @@ __________________________________________________________________________
 11. is_valid → indica que o cliente já realizou o pagamento
 12. is_net → indica que a transação foi finalizada
 13. payment_id → número único do método de pagamento
-__________________________________________________________________________
+
 
 ### sku_detail (detalhe do produto)
 
@@ -38,19 +38,19 @@ __________________________________________________________________________
 3. base_price → preço do produto exibido na etiqueta
 4. cogs → Cost of Goods Sold / custo total para vender 1 unidade do produto
 5. category → categoria do produto
-__________________________________________________________________________
+
 
 ### customer_detail (detalhe do cliente)
 
 1. id → número único do cliente
 2. registered_date → data em que o cliente se registrou como membro
-__________________________________________________________________________
+
 
 ### payment_detail (detalhe do pagamento)
 
 1. id → número único do método de pagamento
 2. payment_method → método de pagamento utilizado
-__________________________________________________________________________
+
 
 
 Vamos ressaltar que na tabela transacional (ou tabela Fato) "order_detail" temos variáveis chaves 
