@@ -61,7 +61,7 @@ Vamos de fato ao que foi pedido ao analista de dados!!!
 <br>
 <br>
 
-## QUESTÃO 01
+## QUESTÃO 1
 <br> 
 
 > Durante as transações ocorridas em 2021, em qual mês o valor total da transação (after_discount) atingiu seu pico? Utilize "is_valid = 1" para filtrar os dados da transação. Tabela de origem: "order_detail".
@@ -93,9 +93,9 @@ O resultado da consulta acima nos mostra que o pico no valor total da transaçã
 
 <br>
 
-## QUESTÃO 02
+## QUESTÃO 2
 <br>
-> Durante as transações realizadas no ano de 2022, qual categoria gerou o maior valor de transação? Utilize `is_valid = 1` para filtrar os dados de transação. Tabela de origem: `order_detail`, `sku_detail`
+> Durante as transações realizadas no ano de 2022, qual categoria gerou o maior valor de transação? Utilize "is_valid = 1" para filtrar os dados de transação. Tabela de origem: "order_detail", "sku_detail"
 <br>
 
 **RESPOSTA 2**
@@ -120,6 +120,41 @@ do maior para o menor valor total por categoria.
 <br>
 
 O resultado da consulta nos mostra que a categoria Mobiles & Tablets foi a que gerou maior receita no ano de 2022, apresentando o maior total de transações.
+
+br>
+
+## QUESTÃO 3
+<br>
+
+> Compare os valores de transação de cada categoria nos anos de 2021 e 2022. Mencione quais categorias apresentaram aumento e quais diminuiram os valores de transação de 2021 para 2022. Utilize "is_valid = 1" para filtrar os dados de transação. Tabelas de origem: "order_detail", "sku_detail".
+
+**RESPOSTA 3**
+
+Para resolver este exercício vamos calcular o total de transações para o ano de 2012 e 2022 com base na categoria. Depois, calcular a diferença entre o total de cada categoria em cada ano e verificar se houve aumento ou redução de vendas nesse período. A seguir temos a resolução do exercício proposto:
+
+<br>
+<div align="center">
+       <img width="690" height="515" alt="Consulta_Q3" src="https://github.com/user-attachments/assets/d2632934-fcf0-4e92-9959-0b6892a9e56e" /><p><em>Fig. 05: Consulta da questão 03.</em></p>
+</div>
+<br>
+
+Neste exercício, para realizar uma análise comparativa do valor de transações por categoria entre os anos de 2021 e 2022, precisamos fazer uso de uma tabela temporária (CTE) para organizar a nossa query, denominada "Tabela_final". Nessa tabela vamos usar o INNER JOIN para consolidar os dados da tabela "order_detail" e da tabela "sku_detail", associando cada pedido à sua respectiva categoria por meio do identificador do sku. Em seguida, aplica-se um filtro para considerar apenas registros em que o cliente já realizaou o pagamento (is_valid = 1), garantindo a qualidade dos dados antes da agregação. O cálculo do faturamento anual é feito por meio de agregações condicionais, utilizando a função SUM combinada com expressões CASE WHEN, que somarão os valores das transações (after_discount) separadamente para os anos de 2021 e 2022. Após o agrupamento por categoria, será calculada a diferença (Delta) entre os anos e classificado o comportamento de cada categoria de acordo com o aumento ou redução no valor das transações. Por fim, o resultado é ordenado pela categoria que teve maior aumento de receita em 2022 para aquelas que tiveram menores crescimento e/ou tiveram vendas menores que no ano de 2021.
+
+<br>
+<div align="center">
+       <img width="501" height="311" alt="Resultado_Q3" src="https://github.com/user-attachments/assets/a88a17a6-1b27-45bf-864f-21d3184ff805" /><p><em>Fig. 06: Resultado da questão 03.</em></p>
+</div>
+<br>
+
+
+Pelo retultado, podemos observar que devido á diversos fatores, como avanço tecnológico e/ou pandemia, o setor de Mobiles & Tablets teve maior crescimento e, Books e Others, tiveram maior redução de vendas comparado com o ano anterior.
+
+
+br>
+
+## QUESTÃO 4
+<br>
+
 
 
 
