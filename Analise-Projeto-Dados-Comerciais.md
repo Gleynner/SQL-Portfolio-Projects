@@ -53,7 +53,7 @@ ________
 ______
 
 
-Vamos ressaltar que na tabela transacional (ou tabela Fato) "order_detail" temos variáveis chaves (chaves estrangeiras) para unir às tabelas dimensionais "sku_detail", "customer_detail" e "payment_detail". Todas as 5 perguntas devem ser respondidas usando as tabelas acima. AS perguntas e suas respectivas resposta estão dispostas a seguir: 
+Vamos ressaltar que na tabela transacional (ou tabela Fato) "order_detail" temos variáveis chaves (chaves estrangeiras) para unir às tabelas dimensionais "sku_detail", "customer_detail" e "payment_detail". Todas as 5 perguntas devem ser respondidas usando as tabelas acima. As perguntas e suas respectivas resposta estão dispostas a seguir: 
 
 
 Vamos de fato ao que foi pedido ao analista de dados!!!
@@ -64,17 +64,12 @@ Vamos de fato ao que foi pedido ao analista de dados!!!
 ## QUESTÃO 01
 <br> 
 
-> Durante as transações ocorridas em 2021, em qual mês o valor total da transação (after_discount) atingiu
-> seu pico? Utilize "is_valid = 1" para filtrar os dados da transação. Tabela de origem: "order_detail".
+> Durante as transações ocorridas em 2021, em qual mês o valor total da transação (after_discount) atingiu seu pico? Utilize "is_valid = 1" para filtrar os dados da transação. Tabela de origem: "order_detail".
 
 
 **RESPOSTA 1**
 
-A partir do exercício proposto, definimos as colunas "Mes_ID", "Mes_nome", "Ano" e "Valor_total_transacao"
-para estarem presentes no resultado de nossa consulta. Para isso, filtramos os dados para o ano de 2021 e
-somamos o total de transações para cada mês e, em seguida, ordenamos em ordem decrescente os valores totais
-de transaçoes realizada, considerando apenas as transações em que os clientes já realizaram o pagamento 
-(is_valid = 1).
+A partir do exercício proposto, definimos as colunas "Mes_ID", "Mes_nome", "Ano" e "Valor_total_transacao" para estarem presentes no resultado de nossa consulta. Para isso, filtramos os dados para o ano de 2021 e somamos o total de transações para cada mês e, em seguida, ordenamos em ordem decrescente os valores totais de transaçoes realizada, considerando apenas as transações em que os clientes já realizaram o pagamento (is_valid = 1).
 
 Abaixo segue o trecho de código para solucionar o problema proposto.
 
@@ -86,14 +81,7 @@ Abaixo segue o trecho de código para solucionar o problema proposto.
 </div>
 <br>
 
-Nesta query, "MONTH()" foi utilizado para extrair o número do mês em cada data, "DATENAME(MONTH, 
-order_date)" para retornar o nome do mês por extenso, "YEAR()" extra o ano da data e "SUM(after_discount)" 
-para somar todos os valores da coluna "after_discount". Como há "GROUP BY", essa soma será feita 
-por grupo e o "Valor_total_transacao" será o faturamento total daquele mês. A cláusula "WHERE" foi 
-utilizada para aplicar os filtros antes do agrupamento. "GROUP BY" foi usado para definir como os 
-dados serão agrupados e, cada combinação  de "Ano", "Mes_ID" e "Mes_nome" formará um grupo. Isso é 
-obrigatório porque toda coluna no "SELECT" que não é função de agregação (SUM, COUNT, etc) precisa 
-estar no "GROUP BY". Por fim, "ORDER BY" define a ordem do resultado final.
+Nesta query, "MONTH()" foi utilizado para extrair o número do mês em cada data, "DATENAME(MONTH, order_date)" para retornar o nome do mês por extenso, "YEAR()" extra o ano da data e "SUM(after_discount)" para somar todos os valores da coluna "after_discount". Como há "GROUP BY", essa soma será feita por grupo e o "Valor_total_transacao" será o faturamento total daquele mês. A cláusula "WHERE" foi utilizada para aplicar os filtros antes do agrupamento. "GROUP BY" foi usado para definir como os dados serão agrupados e, cada combinação  de "Ano", "Mes_ID" e "Mes_nome" formará um grupo. Isso é obrigatório porque toda coluna no "SELECT" que não é função de agregação (SUM, COUNT, etc) precisa estar no "GROUP BY". Por fim, "ORDER BY" define a ordem do resultado final.
 
 <br>
 <div align="center">
@@ -101,8 +89,7 @@ estar no "GROUP BY". Por fim, "ORDER BY" define a ordem do resultado final.
 </div>
 <br>
 
-O resultado da consulta acima nos mostra que o pico no valor total da transação foi atingida no mês 
-de agosto, sendo o maior valor para o ano de 2021.
+O resultado da consulta acima nos mostra que o pico no valor total da transação foi atingida no mês de agosto, sendo o maior valor para o ano de 2021.
 
 <br>
 
@@ -113,10 +100,7 @@ de agosto, sendo o maior valor para o ano de 2021.
 
 **RESPOSTA 2**
 
-Dado o enunciado do problema, primeiramente definimos as columas "Ano", "category" e "Valor_total_transacao"
-como resultado de nossa consulta. Para isso, somamos o valor total das transações que já foram pagas 
-pelo clientes, no ano de 2022, e em seguida ordenamos os valores pelas categorias que mais venderam para 
-aquelas que venderam menos.
+Dado o enunciado do problema, primeiramente definimos as columas "Ano", "category" e "Valor_total_transacao" como resultado de nossa consulta. Para isso, somamos o valor total das transações que já foram pagas pelo clientes, no ano de 2022, e em seguida ordenamos os valores pelas categorias que mais venderam para aquelas que venderam menos.
 
 A resolução proposta segue abaixo:
 
@@ -126,10 +110,7 @@ A resolução proposta segue abaixo:
 </div>
 <br>
 
-O código realiza uma consulta que calcula o valor total das transações por categoria de produto no ano de
-2022, considerando apenas pedidos que o cliente já realizou o pagamento. Para isso, ele relaciona a tabela 
-de pedidos (order_detail) com a tabela de produtos (sku_detail) por meio do identificador do SKU e agrupa
-os dados pelo ano do pedido e pela categoria do produto. Em seguida, ordena a soma dos valores das transações
+O código realiza uma consulta que calcula o valor total das transações por categoria de produto no ano de 2022, considerando apenas pedidos que o cliente já realizou o pagamento. Para isso, ele relaciona a tabela de pedidos (order_detail) com a tabela de produtos (sku_detail) por meio do identificador do SKU e agrupa os dados pelo ano do pedido e pela categoria do produto. Em seguida, ordena a soma dos valores das transações
 do maior para o menor valor total por categoria.
 
 <br>
@@ -138,8 +119,7 @@ do maior para o menor valor total por categoria.
 </div>
 <br>
 
-O resultado da consulta nos mostra que a categoria Mobiles & Tablets foi a que gerou maior receita no ano 
-de 2022, apresentando o maior total de transações.
+O resultado da consulta nos mostra que a categoria Mobiles & Tablets foi a que gerou maior receita no ano de 2022, apresentando o maior total de transações.
 
 
 
