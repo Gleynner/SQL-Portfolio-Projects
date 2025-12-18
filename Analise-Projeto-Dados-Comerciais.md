@@ -60,7 +60,7 @@ Todas as 5 perguntas devem ser respondidas usando as tabelas acima. AS perguntas
 resposta estão dispostas a seguir: 
 
 
-### Vamos de fato ao que foi pedido ao analista de dados!!!
+Vamos de fato ao que foi pedido ao analista de dados!!!
 
 <br>
 <br>
@@ -107,3 +107,43 @@ estar no "GROUP BY". Por fim, "ORDER BY" define a ordem do resultado final.
 
 O resultado da consulta acima nos mostra que o pico no valor total da transação foi atingida no mês 
 de agosto, sendo o maior valor para o ano de 2021.
+
+<br>
+
+## QUESTÃO 02
+<br>
+> Durante as transações realizadas no ano de 2022, qual categoria gerou o maior valor de transação? Utilize `is_valid = 1` para filtrar os dados de transação. Tabela de origem: `order_detail`, `sku_detail`
+<br>
+
+**RESPOSTA 2**
+
+Dado o enunciado do problema, primeiramente definimos as columas "Ano", "category" e "Valor_total_transacao"
+como resultado de nossa consulta. Para isso, somamos o valor total das transações que já foram pagas 
+pelo clientes, no ano de 2022, e em seguida ordenamos os valores pelas categorias que mais venderam para 
+aquelas que venderam menos.
+
+A resolução proposta segue abaixo:
+
+<br>
+<div align="center">
+       <img width="498" height="254" alt="Consulta_Q2" src="https://github.com/user-attachments/assets/3b93ab56-b7c6-4995-9cbc-459881fcc175" /><p><em>Fig. 03: Consulta da questão 02.</em></p>
+</div>
+<br>
+
+O código realiza uma consulta que calcula o valor total das transações por categoria de produto no ano de
+2022, considerando apenas pedidos que o cliente já realizou o pagamento. Para isso, ele relaciona a tabela 
+de pedidos (order_detail) com a tabela de produtos (sku_detail) por meio do identificador do SKU e agrupa
+os dados pelo ano do pedido e pela categoria do produto. Em seguida, ordena a soma dos valores das transações
+do maior para o menor valor total por categoria.
+
+<br>
+<div align="center">
+       <img width="308" height="313" alt="Resultado_Q2" src="https://github.com/user-attachments/assets/144bc091-6dcc-47a7-9cf1-625328fdca85" /><p><em>Fig. 04: Resultado da questão 02.</em></p>
+</div>
+<br>
+
+O resultado da consulta nos mostra que a categoria Mobiles & Tablets foi a que gerou maior receita no ano 
+de 2022, apresentando o maior total de transações.
+
+
+
