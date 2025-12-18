@@ -1,8 +1,7 @@
 #  Projeto Análise de Dados Comerciais
 
 
-Este projeto é composto por cinco perguntas que devem ser respondidas com base nos dados fornecidos. Para isso, 
-são disponibilizadas quatro tabelas, listadas a seguir:
+Este projeto é composto por cinco perguntas que devem ser respondidas com base nos dados fornecidos. Para isso, são disponibilizadas quatro tabelas, listadas a seguir:
 
 1. order_detail
 2. sku_detail
@@ -54,10 +53,7 @@ ________
 ______
 
 
-Vamos ressaltar que na tabela transacional (ou tabela Fato) "order_detail" temos variáveis chaves 
-(chaves estrangeiras) para unir às tabelas dimensionais "sku_detail", "customer_detail" e "payment_detail". 
-Todas as 5 perguntas devem ser respondidas usando as tabelas acima. AS perguntas e suas respectivas 
-resposta estão dispostas a seguir: 
+Vamos ressaltar que na tabela transacional (ou tabela Fato) "order_detail" temos variáveis chaves (chaves estrangeiras) para unir às tabelas dimensionais "sku_detail", "customer_detail" e "payment_detail". Todas as 5 perguntas devem ser respondidas usando as tabelas acima. AS perguntas e suas respectivas resposta estão dispostas a seguir: 
 
 
 Vamos de fato ao que foi pedido ao analista de dados!!!
