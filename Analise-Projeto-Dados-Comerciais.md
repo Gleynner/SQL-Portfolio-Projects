@@ -94,7 +94,7 @@ ORDER BY
     Valor_total_transacao DESC       
 
 <div align="center">
-    <img width="410" height="261" alt="Consulta_Q1" src="https://github.com/user-attachments/assets/05f787f3-3f59-448a-bfbb-23eef80e5226" /><p><em>Fig.: Consulta da questão 01.</em></p>
+       <img width="481" height="276" alt="Consulta_Q1" src="https://github.com/user-attachments/assets/2cecb1d3-aa03-47a8-b725-25668d776274" /><p><em>Fig. 01: Consulta da questão 01.</em></p>
 </div>
 
 
@@ -106,6 +106,10 @@ utilizada para aplicar os filtros antes do agrupamento. "GROUP BY" foi usado par
 dados serão agrupados e, cada combinação  de "Ano", "Mes_ID" e "Mes_nome" formará um grupo. Isso é 
 obrigatório porque toda coluna no "SELECT" que não é função de agregação (SUM, COUNT, etc) precisa 
 estar no "GROUP BY". Por fim, "ORDER BY" define a ordem do resultado final.
+
+<div align="center">
+       <img width="321" height="252" alt="Resultado_Q1" src="https://github.com/user-attachments/assets/da91f8dc-bbb6-4f52-8f90-33a4bac5eafe" /><p><em>Fig. 02: Resultado da questão 01.</em></p>
+</div>
 
 O resultado da consulta acima nos mostra que o pico no valor total da transação foi atingida no mês 
 de agosto, sendo o maior valor para o ano de 2021.
