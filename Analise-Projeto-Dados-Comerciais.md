@@ -94,8 +94,8 @@ ORDER BY
     Valor_total_transacao DESC       
 
 <div align="center">
-    <img width="410" height="261" alt="Consulta_Q1" src="https://github.com/user-attachments/assets/05f787f3-3f59-448a-bfbb-23eef80e5226" /><p><em>Fig.: Consulta da questão 01..</em></p>
-
+    <img width="410" height="261" alt="Consulta_Q1" src="https://github.com/user-attachments/assets/05f787f3-3f59-448a-bfbb-23eef80e5226" /><p><em>Fig.: Consulta da questão 01.</em></p>
+</div>
 
 
 Nesta query, "MONTH()" foi utilizado para extrair o número do mês em cada data, "DATENAME(MONTH, 
